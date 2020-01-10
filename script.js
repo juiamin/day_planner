@@ -134,4 +134,7 @@ if (storedPlans !== null) {
       $hourRow.css("background-color","tomato")
     }
   };
+  $(document).on('click','i',function(event){
+    event.preventDefault();
+  })
 });
