@@ -19,7 +19,7 @@ let $dateHeading = $('#navbar-subtitle');
 $dateHeading.text(now);
 
 
-const saveIcon = "./images/diskette.png"; 
+const saveIcon = "./images/save.png"; 
 
 
 let storedPlans = JSON.parse(localStorage.getItem("storedPlans"));
@@ -152,5 +152,17 @@ if (storedPlans !== null) {
     if (test) { console.log('click pta after '+ planTextArr); }
     $(`#saveid-${$index}`).removeClass('shadowPulse');
     localStorage.setItem("storedPlans", JSON.stringify(planTextArr));
+   });
+    $(document).on('change','input', function(event) {
+      event.preventDefault();  
+      if (test) { console.log('onChange'); }
+      if (test) { console.log('id', $(this).attr('hour-index')); }
+  
+      // neeed to check for save button
+  
+      let i = $(this).attr('hour-index');
+  
+      // add shawdow pulse class
+      $(`#saveid-${i}`).addClass('shadowPulse');
+    });
   });
-});
