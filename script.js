@@ -14,4 +14,15 @@ $(document).ready(function() {
     nowHour24 = 13;
     nowHour12 = 1;
   }
+
+let $dateHeading = $('#navbar-subtitle');
+$dateHeading.text(now);
+
+
+const saveIcon = "./images/diskette.png"; 
+
+
+let storedPlans = JSON.parse(localStorage.getItem("storedPlans"));
+
+if (test) { console.log(storedPlans); }
 });
