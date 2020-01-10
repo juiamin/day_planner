@@ -134,7 +134,23 @@ if (storedPlans !== null) {
       $hourRow.css("background-color","tomato")
     }
   };
-  $(document).on('click','i',function(event){
-    event.preventDefault();
-  })
+   $(document).on('click','i', function(event) {
+    event.preventDefault();  
+
+    if (test) { console.log('click pta before '+ planTextArr); }
+
+    let $index = $(this).attr('save-id');
+
+    let inputId = '#input-'+$index;
+    let $value = $(inputId).val();
+
+    planTextArr[$index] = $value;
+
+
+    if (test) { console.log('value ', $value); }
+    if (test) { console.log('index ', $index); }
+    if (test) { console.log('click pta after '+ planTextArr); }
+    $(`#saveid-${$index}`).removeClass('shadowPulse');
+    localStorage.setItem("storedPlans", JSON.stringify(planTextArr));
+  });
 });
