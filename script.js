@@ -32,7 +32,7 @@ if (storedPlans !== null) {
     
     
     planTextArr = new Array(9);
-    planTextArr[4] = "Picnic lunch outside";
+    planTextArr[4] = "meeting with client";
   }
   if (test) { console.log("full array of plned text",planTextArr); }
   let $plannerDiv = $('#plannerContainer');
